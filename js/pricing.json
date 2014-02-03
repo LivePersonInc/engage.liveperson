@@ -1,0 +1,43 @@
+{
+
+"starter": {
+	"annual": {
+				"list_price" : "$99/mo",
+				"discount" : "55% off",
+				"price" : "$44.55/mo"
+			},
+
+		"monthly":  {
+				"list_price" : "$99/mo",
+				"discount" : "40% off",
+				"price" : "$59.40/mo"
+			}
+	},
+
+"basic": {
+		"annual": {
+				"list_price" : "$272/mo",
+				"discount" : "55% off",
+				"price" : "$122.40/mo"
+			},
+
+		"monthly":  {
+				"list_price" : "$272/mo",
+				"discount" : "40% off",
+				"price" : "$163.20/mo"
+			}
+	},
+
+"deluxe": {
+		"annual": {
+				"list_price" : "$729/mo",
+				"discount" : "55% off",
+				"price" : "$328.05/mo"
+			},
+		"monthly":  {
+				"list_price" : "$729/mo",
+				"discount" : "40% off",
+				"price" : "$437.40/mo"
+			}
+	}
+}
