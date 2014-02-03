@@ -534,16 +534,20 @@ table.pricing-details td ul li {
 	padding-left: 27px;
 }
 
-
+#highlights ul {
+	margin: 0px;
+	padding: 0px;
+}
 
 #highlights ul li {
-list-style-type: square;
+list-style-type: none;
 font-family: MyriadPro-Regular;
 font-size: 26px;
-line-height: 42px;
+line-height: 35px;
 color: #50677f;
 padding-left: 10px;
-
+margin-top: 10px;
+margin-left: 0px;
 }
 
 
