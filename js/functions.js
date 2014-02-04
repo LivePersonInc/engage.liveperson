@@ -100,7 +100,7 @@ $(document).ready(function(){
     });
 
     setTimeout(function(){
-       // $('#chatpop').show();
+       $('#chatpop').show();
     }, 1500)
 
     $('#notnow').click(function(){

@@ -70,7 +70,7 @@ textarea:-moz-placeholder{
 	font-family: MyriadPro-Bold;
 }
 
-#headerleft p{
+	#headerleft p{
 	font-weight: normal;
 	color: #fff;
 	font-size: 33px;
@@ -329,9 +329,6 @@ textarea:-moz-placeholder{
 	display: none;
 }
 
-
-
-
 #pricing h1 {
 	font-weight: normal;
 	margin-top: -6px;
@@ -369,7 +366,7 @@ div.annual {
 	display: none;
 }
 
-#details button {
+#details button, .start {
 	background: url(../images/button_bg.png) 0px 0px no-repeat;
 	font-family: MyriadPro-Bold;
 	border: 0;
@@ -379,6 +376,15 @@ div.annual {
 	font-size: 13px;
 }
 
+.start.bigger {
+	margin: 0 auto;
+	background-size: cover;
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
 #details button.off {
 
 	background: none;
@@ -386,8 +392,6 @@ div.annual {
 	width: 110px;
 	height: 28px;
 	color: #6b7b94;
-
-
 }
 
 
@@ -398,7 +402,7 @@ table.pricing-details {
 }
 
 table.pricing-details th {
-font-family: MyriadPro-Bold;
+	font-family: MyriadPro-Bold;
 	font-size: 23px;
 	font-weight: bold;
 	color: #FFF;
@@ -532,9 +536,11 @@ table.pricing-details td ul li {
 	display: inline-block;
 	vertical-align: top;
 	padding-left: 27px;
+	text-align: center;
 }
 
 #highlights ul {
+	text-align: left;
 	margin: 0px;
 	padding: 0px;
 }
@@ -563,6 +569,12 @@ margin-left: 0px;
 #tryit img{
 	margin-top: 13px;
 	cursor: pointer;
+}
+
+.post-pricing {
+	width: 100%;
+	text-align: center;
+	padding: 40px;
 }
 
 
