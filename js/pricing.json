@@ -9,8 +9,8 @@
 
 		"monthly":  {
 				"list_price" : "$99/mo",
-				"discount" : "40% off",
-				"price" : "$59.40/mo"
+				"discount" : "50% off",
+				"price" : "$49.50/mo"
 			}
 	},
 
@@ -23,8 +23,8 @@
 
 		"monthly":  {
 				"list_price" : "$272/mo",
-				"discount" : "40% off",
-				"price" : "$163.20/mo"
+				"discount" : "50% off",
+				"price" : "$136.00/mo"
 			}
 	},
 
@@ -36,8 +36,8 @@
 			},
 		"monthly":  {
 				"list_price" : "$729/mo",
-				"discount" : "40% off",
-				"price" : "$437.40/mo"
+				"discount" : "50% off",
+				"price" : "$364.50/mo"
 			}
 	}
 }
