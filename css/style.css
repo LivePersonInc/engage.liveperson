@@ -1,3 +1,7 @@
+html {
+	 -webkit-font-smoothing: antialiased;
+}
+
 body{
 	margin: 0;
 	padding: 0;
@@ -321,6 +325,12 @@ textarea:-moz-placeholder{
 
 }
 
+.popular_banner {
+	top: -16px;
+	position: relative;
+	left: -9px;
+}
+
 #month-to-month {
 	diplay: block;
 }
@@ -395,6 +405,7 @@ div.annual {
 	width: 244px;
 	height: 80px;
 	background: url(../img/trynow-button.png);
+	margin-top: 33px;
 }
 
 .start.bigger a {
@@ -414,48 +425,56 @@ div.annual {
 
 
 table.pricing-details {
-	width: 100%;
+	width: 600px;
 	color: #FFF;
-}
+	background: url('../img/pricing_colorblocks.png') no-repeat left top;
+	background-size: contain ;
+	margin: 0px;
+	padding: 0px;
+	}
 
 table.pricing-details th {
 	font-family: MyriadPro-Bold;
 	font-size: 23px;
 	font-weight: bold;
 	color: #FFF;
-	padding: 10px;
+	padding: 5px;
+	padding-top: 0;
+	width: 175px;
+height: 195px;
+
 }
 
 table.pricing-details th.starter {
-  /* fallback */
-  background-color: #1a82f7;
-  background: url(images/linear_bg_2.png);
-  background-repeat: repeat-x;
-
-  /* Safari 4-5, Chrome 1-9 */
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e3a33c), to(#e8b53d));
-
-  /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(top, #e8b53d, #e3a33c);
-
-  /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #e8b53d, #e3a33c);
-
-  /* IE 10 */
-  background: -ms-linear-gradient(top, #e8b53d, #e3a33c);
-
-  /* Opera 11.10+ */
-  background: -o-linear-gradient(top, #e8b53d, #e3a33c);
 }
 
 
 table.pricing-details th p {
-	font-family: MyriadPro-Regular;
-	font-size: 13px;
-	}
+		padding-top: 5px;
+		font-family: Arial;
+		height: 65px;
+		width: 150px;
+		font-size: 13px;
+		margin: 0 auto;
+		padding-left: 3px;
+		color: #ffffff;
+		font-weight: normal;
+}
+
+div.credits {
+		font-family: Arial;
+	font-size: 12px;
+	color: #414141;
+	line-height: 28px;
+}
 
 table.pricing-details th .list_price {
 	text-decoration: line-through;
+	font-family: Georgia;
+	font-weight: bold;
+	font-style: italic;
+	color: #ffffff;
+	font-size: 15px;
 }
 
 table.pricing-details th .percentage {
@@ -465,57 +484,41 @@ table.pricing-details th .percentage {
 }
 
 table.pricing-details th .price {
-	font-family: MyriadPro-Bold;
-	font-size: 17px;
-	font-style: italic;
+font-family: Georgia;
+font-weight: bold;
+font-style: italic;
+color: #ffffff;
+font-size: 15px;
+margin-top: 6px;
+}
+
+table.pricing-details th hr {
+margin: 4px;
+width: 111%;
+margin-left:-11px;
+padding: 0px;
+background-color: #c3731b;
+border: 0px;
+border-top: 1px solid #fec870;
+}
+
+
+div.discount {
+	font-family: Georgia;
+font-weight: bold;
+font-style: italic;
+color: #ffffff;
+font-size: 22px;
 }
 
 
 
 table.pricing-details th.basic {
-  /* fallback */
-  background-color: #1a82f7;
-  background: url(images/linear_bg_2.png);
-  background-repeat: repeat-x;
-
-  /* Safari 4-5, Chrome 1-9 */
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d07829), to(#db982e));
-
-  /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(top, #db982e, #d07829);
-
-  /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #db982e, #d07829);
-
-  /* IE 10 */
-  background: -ms-linear-gradient(top, #db982e, #d07829);
-
-  /* Opera 11.10+ */
-  background: -o-linear-gradient(top, #db982e, #d07829);
 }
 
 
 
 table.pricing-details th.deluxe {
-  /* fallback */
-  background-color: #1a82f7;
-  background: url(images/linear_bg_2.png);
-  background-repeat: repeat-x;
-
-  /* Safari 4-5, Chrome 1-9 */
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#be511a), to(#cd7821));
-
-  /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(top, #cd7821, #be511a);
-
-  /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #cd7821, #be511a);
-
-  /* IE 10 */
-  background: -ms-linear-gradient(top, #cd7821, #be511a);
-
-  /* Opera 11.10+ */
-  background: -o-linear-gradient(top, #cd7821, #be511a);
 }
 
 
@@ -525,7 +528,7 @@ table.pricing-details td {
 	text-align: center;
 	border-left: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
-
+	padding-top: 14px;
 	color: #50677f;
 	font-weight: normal;
 	font-size: 17px;
@@ -542,13 +545,14 @@ table.pricing-details td ul li {
 	margin: none;
 	padding: none;
 	font-size: 13px;
+margin-top: 6px;
 }
 
 #highlights {
 	background-color: #f5f5f5;
 	height: 100%;
 	width: 407px;
-	margin-left: 20px;
+	margin-left: 60px;
 	margin-top: 50px;
 	display: inline-block;
 	vertical-align: top;
@@ -563,7 +567,7 @@ table.pricing-details td ul li {
 }
 
 #highlights ul li {
-list-style-type: none;
+list-style-type: disc;
 font-family: MyriadPro-Regular;
 font-size: 26px;
 line-height: 35px;
