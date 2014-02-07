@@ -1,32 +1,26 @@
-/*
-1. Read JSON file into page, remotely
-2. Get the ID of each of the container
-
-
-*/
-
-
-
-
-function populateColumn(columnName, data){
-	  var column = $('tr th.' + columnName);
-
-	  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
-	  column.find('.monthly .discount').text(data[columnName].monthly.discount);
-	  column.find('.monthly .price').text(data[columnName].monthly.price);
-
-	  column.find('.annual .list_price').text(data[columnName].annual.list_price);
-	  column.find('.annual .discount').text(data[columnName].annual.discount);
-	  column.find('.annual .price').text(data[columnName].annual.price);
-};
 
 	$.getJSON( 'js/pricing.json', function( data ) {
-
 	  populateColumn('starter', data);
 	  populateColumn('basic', data);
 	  populateColumn('deluxe', data);
 
 	});
+
+function populateColumn(columnName, data){
+	  var column = $('tr th.' + columnName);
+
+	  column.find('.annual .list_price').text(data[columnName].annual.list_price);
+	  column.find('.annual .discount').text(data[columnName].annual.discount);
+	  column.find('.annual .price').text(data[columnName].annual.price);
+
+	  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
+	  column.find('.monthly .discount').text(data[columnName].monthly.discount);
+	  column.find('.monthly .price').text(data[columnName].monthly.price);
+
+};
+
+
+
 
 	$('button#annual').click(function() {
 		$('button#monthly').addClass('off');
