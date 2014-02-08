@@ -89,8 +89,9 @@ Footer
 			margin-top:0px;
 			padding:10px;
 			color:#666;
-			font-size:11px;
-		}
+			font-size: 11px;
+			line-height: 16px;
+			}
 
 		#footer_number{
 			font-size: 23px;
@@ -118,7 +119,7 @@ Footer
 		.footer_links {
 			/* float:right; */
 			margin-bottom:10px;
-			margin-top: 36px;
+			margin-top: 36px;w
 			color: #fff;
 
 		}
@@ -202,7 +203,7 @@ textarea:-moz-placeholder{
 }
 
 .innerwrap{
-	width: 1080px;
+	width: 1120px;
 	margin: 0 auto;
 	overflow: hidden;
 	height: 100%;
@@ -214,12 +215,12 @@ textarea:-moz-placeholder{
 }
 
 #logowrap{
-	height: 74px;
+	height: 80px;
 	background-color: #fff;
 }
 
 #logowrap img{
-	margin-top: 21px;
+	margin-top: 20px;
 }
 
 #headerwrap{
@@ -230,11 +231,11 @@ textarea:-moz-placeholder{
 }
 
 #clickbox{
-	margin-top: 47px;
+margin-top: 40px;
 }
 
 #clicktochat{
-	margin-right: 6px;
+margin-left: 2px;
 }
 
 #headerleft{
@@ -792,8 +793,8 @@ cursor: pointer;
 	text-align: center;
 	margin-top: 6px;
 	padding: 20px 90px;
-	font: 15px "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-	line-height: 1.25;
+	font: 17px "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	line-height: 1.35;
 	color: #666;
 
 }
