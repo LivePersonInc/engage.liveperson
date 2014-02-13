@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="//cdn.optimizely.com/js/21092086.js"></script>
+
+    <!-- <meta name="viewport" content="width=575"/> -->
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LivePerson</title>
+
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Fonts -->
+    <link href="http://fnt.webink.com/wfs/webink.css/?project=75078500-0662-467F-A536-5E11C7A0A3E8&fonts=8C5B073A-F3EB-BF79-99E3-C3C42439FD61:f=MyriadPro-BoldCond,1421BCAA-4D56-EF9D-A008-8F0EFD21830C:f=MyriadPro-Bold,73FEA18A-033F-AE20-4C65-461CA87E3CF3:f=MyriadPro-It,F7BFE656-C078-45C2-FE87-230C4CB9A997:f=MyriadPro-SemiboldIt,050FBD0F-5D55-410F-DC57-586D49D25BCB:f=MyriadPro-Semibold,39FEB533-C926-4578-87C0-2D25696AA0F9:f=MyriadPro-Cond,73E6C83D-7F13-A8AE-4770-C315AE5061C3:f=MyriadPro-Regular" rel="stylesheet" type="text/css"/>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-277946-1']);
+      _gaq.push(['_setDomainName', 'liveperson.com']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+</head>
+<body>
+    <div id="pagewrap">
+        <div id="logobox">
+            <div class="innerwrap">
+                <img id="logo" src="img/logo.png"/>
+            </div>
+        </div>
+
+        <div id="engagebox">
+            <div class="innerwrap">
+                <h1>LiveEngage</h1>
+                <p>Drive online sales, generate quality leads, and provide exceptional service at a lower cost.</p>
+                <a href="#" onclick="goog_report_conversion(); _gaq.push(['_trackEvent', 'click', 'mobile_Chat']); return false;" id="clickchatlink" alt="Click to Chat"><img id="bchat" src="img/chat.png" id="clicktochat"/></a>
+                <a href="tel:8779590140" id="mphone" onclick="_gaq.push(['_trackEvent', 'click', 'mobile_Call']);" alt="Click to Try"><img id="bcall" src="img/call.png" /></a>
+            </div>
+        </div>
+
+        <div id="dobox">
+            <div class="innerwrap">
+                <div class="blocks" id="block1">
+                    <img id="bsales" src="img/box_sales.png"/>
+                    <h3>Increase Conversions, Average Order Values, and Leads</h3>
+                    <p>Businesses that use LiveEngage typically see a <span class="bold">20%</span> increase in conversions and a <span class="bold">35%</span> increase in average order values.</p>
+                </div>
+                <div class="blocks" id="block2">
+                    <img id="bmarket" src="img/box_marketing.png"/>
+                    <h3>Improve Click-Through Rates and Reduce Bounce Rates</h3>
+                    <p>By engaging search traffic with personalized offers, clients typically see conversion increases of over <span class="bold">25%</span>.</p>
+                </div>
+                <div class="blocks" id="block3">
+                    <img id="bservice" src="img/box_service.png"/>
+                    <h3>Increase Customer Satisfaction while Reducing Costs</h3>
+                    <p>LiveEngage enables businesses to provide higher levels of service while decreasing handling costs by as much as <span class="bold">80%</span>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="footerbox">
+            <div class="innerwrap">
+                <p id="copyright" class="blue">&copy;2012&#45;2013 <a href="http://www.liveperson.com/">LivePerson</a>, Inc. All rights reserved. Operated by <a href="http://www.level-interactive.com/">Level Interactive</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="http://cache.university-bound.com/JScript/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cache.university-bound.com/JScript/urlparams.js"></script>
+    <script src="js/functions.js" type="text/javascript"></script>
+    <!--/Scripts -->
+
+    <script type="text/javascript">
+
+        if( urlParams['thanks'] ){
+            $('#leftcontent, #rightcontent').hide();
+            $('#headerpicbox .innerwrap').empty().append('<img src="img/thankyou.png"/>')
+            $('#thanks').show();
+            $('#thanks').append('<!-- Conversion Fire -->\n<iframe style="height: 0px; width: 0px;" frameborder="no" src="/formconversion.html"></iframe>');
+        }
+
+        if( urlParams['oid'] != undefined ){
+            $('input[name=ckm_campaign_id]').val(urlParams['oid']);
+        }
+
+        if( urlParams['pn'] != undefined ){
+            $('#phone').empty().append(urlParams['pn']);
+            $('#mphone').attr('href', 'tel:' + urlParams['pn']);
+        }
+
+        
+    </script>
+
+
+    <!-- Google Code for Remarketing tag -->
+    <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 987970706;
+    var google_conversion_label = "8j3eCMaDtQQQkvmM1wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/987970706/?value=0&amp;label=8j3eCMaDtQQQkvmM1wM&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+
+    <!-- BEGIN LivePerson Monitor. -->
+    <script type="text/javascript">
+        window.lpTag={site:'4d1d3012',_v:'1.1',protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);});},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);});}},defer:function(fn){this._defL=this._defL||[];this._defL.push(fn);},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();}};lpTag.init();
+    </script>
+    <!-- END LivePerson Monitor. -->
+
+
+    <!-- BEGIN LivePerson Custom Variables. -->
+    <script type="text/javascript"> 
+    if (typeof(lpMTagConfig)=='undefined') { lpMTagConfig = {}; }
+    if (typeof(lpMTagConfig.sessionVar) == "undefined"){ lpMTagConfig.sessionVar = [];}
+    lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] = 'Campaign_ID=701000000009zDd';      
+    lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] = 'Topic=LE by LI';                            
+    lpMTagConfig.sessionVar[lpMTagConfig.sessionVar.length] = 'Section=Paid-Search'; 
+    </script>
+    <!-- END Custom Variables. -->
+
+    <!-- client stuff -->
+    <script type="text/javascript" language="javascript">llactid=14969</script>
+    <script type="text/javascript" language="javascript" src="http://t4.trackalyzer.com/trackalyze.js"></script>
+
+
+    <!-- Google code for mobile click to chat conversion page -->
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      goog_snippet_vars = function() {
+        var w = window;
+        w.google_conversion_id = 1072532439;
+        w.google_conversion_label = "HlxjCPqHxQcQ15e2_wM";
+        w.google_conversion_value = 0;
+      }
+      // DO NOT CHANGE THE CODE BELOW.
+      goog_report_conversion = function(url) {
+        goog_snippet_vars();
+        window.google_conversion_format = "3";
+        window.google_is_call = true;
+        var opt = new Object();
+        opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      }
+      var conv_handler = window['google_trackConversion'];
+      if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+      }
+    }
+    /* ]]> */
+    </script>
+    <script type="text/javascript"
+      src="http://www.googleadservices.com/pagead/conversion_async.js">
+    </script>
+
+</body>
+</html>
