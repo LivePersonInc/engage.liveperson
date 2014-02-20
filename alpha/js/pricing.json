@@ -4,13 +4,15 @@
 	"annual": {
 				"list_price" : "$99/mo",
 				"discount" : "55% off",
-				"price" : "$44.55/mo"
+				"price" : "$44.55/mo",
+				"button" : "lp_div_annualbuynowstarter"
 			},
 
 		"monthly":  {
 				"list_price" : "$99/mo",
 				"discount" : "50% off",
-				"price" : "$49.50/mo"
+				"price" : "$49.50/mo",
+				"button" : "lp_div_qtrbuynowstarter"
 			}
 	},
 
@@ -18,13 +20,15 @@
 		"annual": {
 				"list_price" : "$272/mo",
 				"discount" : "55% off",
-				"price" : "$122.40/mo"
+				"price" : "$122.40/mo",
+				"button" : "lp_div_annualbuynowbasic"
 			},
 
 		"monthly":  {
 				"list_price" : "$272/mo",
 				"discount" : "50% off",
-				"price" : "$136.00/mo"
+				"price" : "$136.00/mo",
+				"button" : "lp_div_qtrbuynowbasic"
 			}
 	},
 
@@ -32,12 +36,14 @@
 		"annual": {
 				"list_price" : "$729/mo",
 				"discount" : "55% off",
-				"price" : "$328.05/mo"
+				"price" : "$328.05/mo",
+				"button" : "lp_div_qtrbuynowdeluxe"
 			},
 		"monthly":  {
 				"list_price" : "$729/mo",
 				"discount" : "50% off",
-				"price" : "$364.50/mo"
+				"price" : "$364.50/mo",
+				"button" : "lp_div_annualbuynowdeluxe"
 			}
 	}
 }
