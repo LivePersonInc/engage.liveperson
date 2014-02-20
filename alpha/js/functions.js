@@ -26,20 +26,23 @@ superArray = [
 	});
 
 function populateColumn(columnName, data){
-	  var column = $('tr th.' + columnName);
+	  var column = $('th.' + columnName);
+	  var column2 = $('td.' + columnName);
 
+		  column.find('.annual .list_price').text(data[columnName].annual.list_price);
+		  column.find('.annual .discount').text(data[columnName].annual.discount);
+		  column.find('.annual .price').text(data[columnName].annual.price);
 
+		  column2.find('.credits').text(data[columnName].annual.credits);
+		  column2.find('.button').attr('id', data[columnName].annual.button);
 
-	  column.find('.annual .list_price').text(data[columnName].annual.list_price);
-	  column.find('.annual .discount').text(data[columnName].annual.discount);
-	  column.find('.annual .price').text(data[columnName].annual.price);
-	  column.find('.annual .button').attr('id', data[columnName].annual.button);
+		  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
+		  column.find('.monthly .discount').text(data[columnName].monthly.discount);
+		  column.find('.monthly .price').text(data[columnName].monthly.price);
 
+		  column2.find('.credits').text(data[columnName].monthly.credits);
+		  column2.find('.button').attr('id', data[columnName].monthly.button);
 
-	  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
-	  column.find('.monthly .discount').text(data[columnName].monthly.discount);
-	  column.find('.monthly .price').text(data[columnName].monthly.price);
-	  column.find('.monthly .button').attr('id', data[columnName].monthly.button);
 };
 
 

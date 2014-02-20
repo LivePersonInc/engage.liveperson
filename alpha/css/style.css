@@ -630,6 +630,11 @@ height: 195px;
 table.pricing-details th.starter {
 }
 
+div.button {
+
+margin: 0px 0px 0px 42px;
+
+}
 
 table.pricing-details th p {
 		padding-top: 5px;
@@ -643,7 +648,7 @@ table.pricing-details th p {
 		font-weight: normal;
 }
 
-div.credits {
+div.creditsData {
 
 font-family: Arial;
 font-size: 16px;
@@ -652,7 +657,7 @@ line-height: 28px;
 
 }
 
-div.credits a {
+div.creditsData a {
 	color: #dc3f00;
 	font-weight: bold;
 }
@@ -798,6 +803,21 @@ cursor: pointer;
 	color: #666;
 
 }
+
+.post-pricing > div {
+	margin-left:125px;
+
+}
+
+
+#lp_div_startmytrial_button {
+	margin-top: 20px;
+}
+
+#lp_div_tryitnow_button  {
+	margin: 40px;
+}
+
 
 
 .sponsor-container {
