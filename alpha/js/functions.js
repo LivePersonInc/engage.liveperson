@@ -1,6 +1,7 @@
 
 
 
+/*
 
 var superArray = new Array;
 superArray = [
@@ -13,6 +14,7 @@ superArray = [
 'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Annual'
 
 ]
+*/
 
 /* alert(superArray); */
 

@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<script src="http://localhost/~jason/liveperson/alpha/js/postmessageHost.js"></script>
+		<script>
+			function start(){
+				if ( window.addEventListener ) {
+					window.addEventListener( "load", doLoad, false );
+				} else if ( window.attachEvent ) {
+					window.attachEvent( "onload", doLoad );
+				} else if ( window.onLoad ) {
+					window.onload = doLoad;
+				}
+			}
+
+			function getBillingDomain(){
+				return document.getElementById("domain").value;
+			}
+
+			function doLoad(){
+				var endpoint = {
+					"transport":"postmessage",
+					"configuration":[
+						{
+							"url": getBillingDomain() + "/postmessage/postmessage.min.html",
+							"delayLoad":0
+						}
+					]
+				};
+
+				var configurers = {
+					postmessage:{
+						frames:[],
+						defaults:{
+							timeout: 100
+						},
+						configure:function (frame) {
+							this.frames.push(frame);
+						}
+					}
+				};
+				configurers[endpoint.transport].configure(endpoint.configuration[0]);
+
+				lpBilling.taglets.lpAjax.configureTransports(configurers);
+			}
+
+			function success(){
+				console.log("success >>> 111");
+			}
+
+			function error(){
+				console.log("error >>> 111");
+			}
+
+			function onServerResponse(msg){
+				console.log("onServerResponse >> OK msg=");
+				console.log(msg);
+				document.getElementById("result").innerHTML = "<b>The result is:</b><br /> " + JSON.stringify(msg.body);
+			}
+
+			function send(url){
+				var req = lpBilling.taglets.lpAjax_request;
+
+				req.method = "post";
+
+				req.url = url;
+				req.callback = onServerResponse;
+				req.data=document.getElementById('rateplansdata').value;
+
+				req.success = function (data) {
+					console.log("req.success");
+					onServerResponse(data);
+				};
+
+				req.error = function (data) {
+					console.log("req.error");
+					onServerResponse(data);
+				};
+
+				lpBilling.taglets.lpAjax.issueCall(req);
+			}
+
+			function getPlanDetails(){
+				//for (ii = 1; ii < 4; ii++){
+					url = getBillingDomain() + "/le-billing/public/api/pricing/rateplans/v10";
+				//}
+				document.getElementById("url").innerHTML = "<b>The URL to the resource is:</b><br />" + url;
+				send(url);
+			}
+
+			//start();
+		</script>
+	</head>
+	<body>
+		<h1>Billing service - Demo of pricing resource.</h1>
+		<br />
+		Click on the send button.
+		<br />
+		<table>
+			<tr>
+				<td>
+					Billing domain:
+				</td>
+				<td>
+					<input id="domain" type="text" value="https://le-billing-a.liveperson.net" style="width: 600px;" />
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Request Plans:
+				</td>
+				<td>
+					<input id="rateplansdata" type="text" value='[{"productName":"LiveEngage","productRatePlanName":"100 / Monthly"},{"productName":"LiveEngage","productRatePlanName":"1,090 / Semi-Annual"}]' style="width: 600px;" />
+
+				</td>
+			</tr>
+		</table>
+		<br />
+		<input type="button" onClick="getPlanDetails();" value="send" />
+		<br />
+		<br />
+		<div id="url"></div>
+		<br />
+		<div id="result"></div>
+		<script>start();</script>
+	</body>
+</html>
