@@ -1,6 +1,111 @@
 
 
 
+/* giancarlo added */
+	function start(){
+				if ( window.addEventListener ) {
+					window.addEventListener( "load", doLoad, false );
+				} else if ( window.attachEvent ) {
+					window.attachEvent( "onload", doLoad );
+				} else if ( window.onLoad ) {
+					window.onload = doLoad;
+				}
+			}
+
+
+
+			function doLoad(){
+				var endpoint = {
+					"transport":"postmessage",
+					"configuration":[
+						{
+							"url": "https://le-billing-a.liveperson.net/postmessage/postmessage.min.html",
+							"delayLoad":0
+						}
+					]
+				};
+
+				var configurers = {
+					postmessage:{
+						frames:[],
+						defaults:{
+							timeout: 100
+						},
+						configure:function (frame) {
+							this.frames.push(frame);
+						}
+					}
+				};
+				configurers[endpoint.transport].configure(endpoint.configuration[0]);
+
+				lpBilling.taglets.lpAjax.configureTransports(configurers);
+			}
+
+			function success(){
+				console.log("success >>> 111");
+			}
+
+			function error(){
+				console.log("error >>> 111");
+			}
+
+			function onServerResponse(data) {
+/*
+			alert(data);
+			alert(data.body[0].productRatePlanName);
+			alert(data.body[1].productRatePlanName);
+			alert(data.body[2].productRatePlanName);
+			alert(data.body[3].productRatePlanName);
+			alert(data.body[4].productRatePlanName);
+			alert(data.body[5].productRatePlanName);
+console.log(data.body[0].includedUnits);
+
+*/
+console.log(data.body);
+
+	  populateColumn('starter', data);
+	  populateColumn('basic', data);
+	  populateColumn('deluxe', data);
+
+	}
+
+
+
+			function send(url){
+				var req = lpBilling.taglets.lpAjax_request;
+
+				req.method = "post";
+
+				req.url = url;
+				req.callback = onServerResponse;
+				req.data= '[{"productName":"LiveEngage","productRatePlanName":"30 / Quarterly"},{"productName":"LiveEngage","productRatePlanName":"100 / Quarterly"},{"productName":"LiveEngage","productRatePlanName":"330 / Quarterly"},{"productName":"LiveEngage","productRatePlanName":"30 / Annual"},{"productName":"LiveEngage","productRatePlanName":"100 / Annual"},{"productName":"LiveEngage","productRatePlanName":"330 / Annual"}]';
+
+				req.success = function (data) {
+					console.log("req.success");
+					onServerResponse(data);
+				};
+
+				req.error = function (data) {
+					console.log("req.error");
+					onServerResponse(data);
+				};
+
+				lpBilling.taglets.lpAjax.issueCall(req);
+			}
+
+
+			start();
+
+
+			$(window).load(function(){
+
+
+				send('https://le-billing-a.liveperson.net/le-billing/public/api/pricing/rateplans/v10');
+
+			})
+/* end giancarlo added */
+
+
 /*
 
 var superArray = new Array;
@@ -16,16 +121,14 @@ superArray = [
 ]
 */
 
-/* alert(superArray); */
-
-
+/* alert(superArray);
 
 	$.getJSON( 'js/pricing.json', function( data ) {
 	  populateColumn('starter', data);
 	  populateColumn('basic', data);
 	  populateColumn('deluxe', data);
 
-	});
+	});*/
 
 function populateColumn(columnName, data){
 	  var column = $('th.' + columnName);

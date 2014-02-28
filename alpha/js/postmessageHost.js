@@ -1,10 +1,5 @@
 window.lpBilling = window.lpBilling || {};
 lpBilling.taglets = lpBilling.taglets || {};
-
-lpBilling.log = function(msg, type, callingMethod){
-	//implement
-}
-
 /*
 ****  lpajax.js  *****
 */
@@ -34,7 +29,6 @@ lpBilling.taglets.lpAjax = (function (window) {
     }
 
     function issueCall(request) {
-		lpBilling.log("START", "INFO", "lpAjax >> issueCall");
         if (!isInit) { init(); }
 
         var tname = 'unknown';
@@ -725,16 +719,13 @@ lpBilling.taglets.postmessage = lpBilling.taglets.postmessage || (function (wind
      * @return {Boolean}
      */
     function issueCall(msgObj) {
-		lpBilling.log("START", "INFO", "postmessage >> issueCall");
         var messageSent = false;
         if (initialised && isValidRequest(msgObj)) {
-			lpBilling.log("START", "INFO", "postmessage >> issueCall");
             if (iFramesObj[msgObj.domain]) {
                 if (iFramesObj[msgObj.domain].validated === validationState.PENDING && !msgObj.validation) {
                     messageSent = queueForFrame(msgObj.domain, msgObj);
                     bufferedCount = bufferedCount + 1;
                 } else {
-					lpBilling.log("b4", "INFO", "postmessage >> issueCall");
                     messageSent = sendRequest(msgObj);
                     if (messageSent) {
                         incrementCallCounters();
@@ -2170,84 +2161,4 @@ lpBilling.taglets.postmessage = lpBilling.taglets.postmessage || (function (wind
     return publicAPI;
 })(window);
 
-/*
-****  playPostMessage.js for billing  *****
-*/
-if ( window.addEventListener ) { 
-	window.addEventListener( "load", doLoad, false );
-} else if ( window.attachEvent ) { 
-	window.attachEvent( "onload", doLoad );
-} else if ( window.onLoad ) {
-	window.onload = doLoad;
-}			
-function getBillingDomain(){
-	return document.getElementById("domain").value;
-}
 
-function doLoad(){
-	var endpoint = {
-		"transport":"postmessage",
-		"configuration":[
-			{
-				"url": getBillingDomain() + "/postmessage/postmessage.min.html",
-				"delayLoad":0
-			}
-		]
-	};
-	
-	var configurers = {
-		postmessage:{
-			frames:[],
-			defaults:{
-				timeout: 100
-			},
-			configure:function (frame) {
-				this.frames.push(frame);
-			}
-		}
-	};
-	configurers[endpoint.transport].configure(endpoint.configuration[0]);
-
-	lpBilling.taglets.lpAjax.configureTransports(configurers);
-}
-
-function success(){
-	lpBilling.log("success 1", "INFO", "playPostMessage >> success");
-}
-
-function error(){
-	lpBilling.log("error 1", "ERROR", "playPostMessage >> error");
-}
-
-function onServerResponse(msg){
-	lpBilling.log("OK msg=", "INFO", "playPostMessage >> onServerResponse");
-	lpBilling.log(msg);
-	document.getElementById("result").innerHTML = "<b>The result is:</b><br /> " + JSON.stringify(msg.body);
-}
-
-function send(url){
-	var req = lpBilling.taglets.lpAjax_request;
-
-	req.method = "get";
-
-	req.url = url;
-	req.callback = onServerResponse;
-
-	req.success = function (data) {
-		console.log("req.success");
-		onServerResponse(data);
-	};
-
-	req.error = function (data) {
-		console.log("req.error");
-		onServerResponse(data);
-	};
-
-	lpBilling.taglets.lpAjax.issueCall(req);
-}
-
-function getPlanDetails(){
-	url = getBillingDomain() + "/le-billing/public/api/pricing/rateplan/v10?productName=" + document.getElementById("productName").value + "&planName=" + document.getElementById("planName").value; 
-	document.getElementById("url").innerHTML = "<b>The URL to the resource is:</b><br />" + url;
-	send(url);
-}
