@@ -10,8 +10,6 @@ body{
 }
 
 
-
-
 /*-------------------
 Footer
 ------------------- */
@@ -207,22 +205,8 @@ textarea:-moz-placeholder{
 .innerwrap{
 	width: 1120px;
 	margin: 0 auto;
-	overflow: auto;
+	overflow: hidden;
 	height: 100%;
-}
-.innerwrap2{
-	width: 1120px;
-	margin: 0 auto;
-	height: 100%;
-}
-
-
-#most-popular {
-	z-index: 3;
-		position: absolute;
-		left: -11px;
-		top: 149px;
-
 }
 
 #pagewrap{
@@ -1127,7 +1111,7 @@ ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic;  }
-svg:not(:root) { overflow: auto; }
+svg:not(:root) { overflow: hidden; }
 figure { margin: 0; }
 
 form { margin: 0; }
