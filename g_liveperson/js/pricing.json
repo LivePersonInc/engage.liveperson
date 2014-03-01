@@ -3,41 +3,53 @@
 "starter": {
 	"annual": {
 				"list_price" : "$99/mo",
-				"discount" : "55% off",
-				"price" : "$44.55/mo"
+				"discount" : "75% off",
+				"price" : "$24.75/mo",
+				"credits": "30",
+				"button" : "lp_div_annualbuynowstarter"
 			},
 
 		"monthly":  {
 				"list_price" : "$99/mo",
-				"discount" : "50% off",
-				"price" : "$49.50/mo"
+				"discount" : "70% off",
+				"price" : "$29.70/mo",
+				"credits": "30",
+				"button" : "lp_div_qtrbuynowstarter"
 			}
 	},
 
 "basic": {
 		"annual": {
 				"list_price" : "$272/mo",
-				"discount" : "55% off",
-				"price" : "$122.40/mo"
+				"discount" : "75% off",
+				"price" : "$68.00/mo",
+				"credits": "100",
+				"button" : "lp_div_annualbuynowbasic"
 			},
 
 		"monthly":  {
 				"list_price" : "$272/mo",
-				"discount" : "50% off",
-				"price" : "$136.00/mo"
+				"discount" : "70% off",
+				"price" : "$81.60/mo",
+				"credits": "100",
+				"button" : "lp_div_qtrbuynowbasic"
 			}
 	},
 
 "deluxe": {
 		"annual": {
 				"list_price" : "$729/mo",
-				"discount" : "55% off",
-				"price" : "$328.05/mo"
+				"discount" : "75% off",
+				"price" : "$182.25/mo",
+				"credits": "330",
+				"button" : "lp_div_qtrbuynowdeluxe"
 			},
 		"monthly":  {
 				"list_price" : "$729/mo",
-				"discount" : "50% off",
-				"price" : "$364.50/mo"
+				"discount" : "70% off",
+				"price" : "$218.70/mo",
+				"credits": "330",
+				"button" : "lp_div_annualbuynowdeluxe"
 			}
 	}
 }

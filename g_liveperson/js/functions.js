@@ -1,4 +1,23 @@
 
+
+
+
+var superArray = new Array;
+superArray = [
+
+'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Quarterly',
+'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Quarterly',
+'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Quarterly',
+'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Annual',
+'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Annual',
+'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Annual'
+
+]
+
+/* alert(superArray); */
+
+
+
 	$.getJSON( 'js/pricing.json', function( data ) {
 	  populateColumn('starter', data);
 	  populateColumn('basic', data);
@@ -7,15 +26,22 @@
 	});
 
 function populateColumn(columnName, data){
-	  var column = $('tr th.' + columnName);
+	  var column = $('th.' + columnName);
+	  var column2 = $('td.' + columnName);
 
-	  column.find('.annual .list_price').text(data[columnName].annual.list_price);
-	  column.find('.annual .discount').text(data[columnName].annual.discount);
-	  column.find('.annual .price').text(data[columnName].annual.price);
+		  column.find('.annual .list_price').text(data[columnName].annual.list_price);
+		  column.find('.annual .discount').text(data[columnName].annual.discount);
+		  column.find('.annual .price').text(data[columnName].annual.price);
 
-	  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
-	  column.find('.monthly .discount').text(data[columnName].monthly.discount);
-	  column.find('.monthly .price').text(data[columnName].monthly.price);
+		  column2.find('.credits').text(data[columnName].annual.credits);
+		  column2.find('.button').attr('id', data[columnName].annual.button);
+
+		  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
+		  column.find('.monthly .discount').text(data[columnName].monthly.discount);
+		  column.find('.monthly .price').text(data[columnName].monthly.price);
+
+		  column2.find('.credits').text(data[columnName].monthly.credits);
+		  column2.find('.button').attr('id', data[columnName].monthly.button);
 
 };
 
@@ -93,9 +119,11 @@ $(document).ready(function(){
         play: { auto: true }
     });
 
+/*
     setTimeout(function(){
        $('#chatpop').show();
     }, 1500)
+*/
 
     $('#notnow').click(function(){
         $('#chatpop').hide();

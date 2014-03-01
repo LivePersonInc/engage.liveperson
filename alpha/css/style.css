@@ -209,6 +209,14 @@ textarea:-moz-placeholder{
 	height: 100%;
 }
 
+
+.innerwrap2 {
+	width: 1120px;
+	margin: 0 auto;
+
+	height: 100%;
+}
+
 #pagewrap{
 	width: 100%;
 	height: 100%;
@@ -383,6 +391,14 @@ margin-left: 2px;
 	font-size: 23px;
 	margin-top: 12px;
 	margin-bottom: 5px;
+}
+
+
+#most-popular {
+	z-index: 3;
+	position: absolute;
+	left: -11px;
+	top: 149px;
 }
 
 #blockwrapper h3{
@@ -910,7 +926,8 @@ color: #f2f2f2;
 	color: #becbdb;
 }
 
-#footer2wrap{background-color: #151314;
+#footer2wrap{
+background-color: #151314;
 height: auto;
 margin-bottom: -16px !important;
 float: left;

@@ -209,6 +209,14 @@ textarea:-moz-placeholder{
 	height: 100%;
 }
 
+
+.innerwrap2 {
+	width: 1120px;
+	margin: 0 auto;
+
+	height: 100%;
+}
+
 #pagewrap{
 	width: 100%;
 	height: 100%;
@@ -383,6 +391,14 @@ margin-left: 2px;
 	font-size: 23px;
 	margin-top: 12px;
 	margin-bottom: 5px;
+}
+
+
+#most-popular {
+	z-index: 3;
+	position: absolute;
+	left: -11px;
+	top: 149px;
 }
 
 #blockwrapper h3{
@@ -630,6 +646,11 @@ height: 195px;
 table.pricing-details th.starter {
 }
 
+div.button {
+
+margin: 0px 0px 0px 42px;
+
+}
 
 table.pricing-details th p {
 		padding-top: 5px;
@@ -643,7 +664,7 @@ table.pricing-details th p {
 		font-weight: normal;
 }
 
-div.credits {
+div.creditsData {
 
 font-family: Arial;
 font-size: 16px;
@@ -652,7 +673,7 @@ line-height: 28px;
 
 }
 
-div.credits a {
+div.creditsData a {
 	color: #dc3f00;
 	font-weight: bold;
 }
@@ -799,6 +820,21 @@ cursor: pointer;
 
 }
 
+.post-pricing > div {
+	margin-left:125px;
+
+}
+
+
+#lp_div_startmytrial_button {
+	margin-top: 20px;
+}
+
+#lp_div_tryitnow_button  {
+	margin: 40px;
+}
+
+
 
 .sponsor-container {
 	width: 570px; height: 200px; float: right;
@@ -890,7 +926,8 @@ color: #f2f2f2;
 	color: #becbdb;
 }
 
-#footer2wrap{background-color: #151314;
+#footer2wrap{
+background-color: #151314;
 height: auto;
 margin-bottom: -16px !important;
 float: left;
