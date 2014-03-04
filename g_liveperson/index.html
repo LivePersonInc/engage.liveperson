@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,11 +49,6 @@
 
 </head>
 <body>
-
-<!-- BEGIN LivePerson Monitor. -->
-<script type="text/javascript"> window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){window.lpTag={site:'59780729'||'',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);},0);},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);},1);}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn);}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn);}else{this._defL=this._defL||[];this._defL.push(fn);}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},start:function(){this.autoStart=true;},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init();}else{window.lpTag._tagCount+=1;} </script>
-
-    <!-- END LivePerson Monitor. -->
     <div id="pagewrap">
         <div id="logowrap">
             <div class="innerwrap">
@@ -69,12 +65,12 @@
                     <h3>LiveEngage</h3>
                     <p>Drive online sales, generate quality leads, and provide exceptional service at a lower cost.</p>
                     <div id="clickbox">
-                        <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v3_Open_GetAFreeTrial']); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Try"><img src="images/tryforfree_button.png" /></a>
+                        <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Try"><img src="images/tryforfree_button.png" /></a>
 
-                        <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v3_Open_ClickToChat']); openSalez(); liveballScriptlet(10, 'json', 'param1=vertChat_Launch');" alt="Click to Chat"><img src="images/clicktochat_button.png" id="clicktochat"/></a>
+                        <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_ClickToChat']); openChat(); liveballScriptlet(10, 'json', 'param1=vertChat_Launch');"><img src="images/clicktochat_button.png" id="clicktochat"/></a>
                     </div>
                 </div>
-                <img id="fellow" src="images/woman.png" />
+                <img id="fellow" src="images/woman3.png" />
 
                 </div>
             </div>
@@ -185,7 +181,7 @@
 
 
 												</ul>
-												<div class="button"></div>
+																							<button class="start" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');">Buy Now</button>
 											</td>
 											<td class="basic">
 											<div class="credits credit-number"></div>
@@ -196,7 +192,7 @@
 														<li class="tooltip" title="Break visitors into different groups based on their behavior and message them accordingly.">Custom Messaging</li>
 														<li class="tooltip" title="Agents are ready to troubleshoot issues 24/7 via live chat or online web tickets.">24/7 Tech Support</li>
 													</ul>
-												<div class="button"></div>
+												<button class="start" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Chat">Buy Now</button>
 
 											<td class="deluxe">
 											<div class="credits credit-number"></div>
@@ -207,13 +203,14 @@
 														<li class="tooltip" title="Break visitors into different groups based on their behavior and message them accordingly.">Custom Messaging</li>
 													<li class="tooltip" title="Agents are ready to troubleshoot issues 24/7 via live chat or online web tickets.">24/7 Tech Support</li>
 													</ul>
-												<div class="button"></div>
-										</tr>
+												<button class="start" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Chat">Buy Now</button>
+												</td>
+
+</tr>
 
 									</table>
 									<div class="post-pricing" style="text-align: center">
-										<p>Need more credits? Have questions about which plan is right for you? </span></p>
-										<a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_ClickToChat']); openChat(); return false;" alt="Click to Chat">Chat to learn more</a>
+										<p>Need more credits? Have questions about which plan is right for you? <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_ClickToChat']); openChat(); return false;" alt="Click to Chat">Chat to learn more</a></p>
 									</div>
                 </div>
 
@@ -224,8 +221,9 @@
 		                <li>Pay only for the number of Live Person visitor interactions</li>
 		                <li>If you run out of credits you can buy more</li>
 	                </ul>
-<button class="start bigger" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial2']); openTrial(); return false;"></button>
-								</div>
+	            	                <button class="start bigger" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial2']); openTrial(); return false;"></button>
+
+		</div>
 
 
 

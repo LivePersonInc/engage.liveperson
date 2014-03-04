@@ -1,23 +1,4 @@
 
-
-
-
-var superArray = new Array;
-superArray = [
-
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Annual',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Annual',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Annual'
-
-]
-
-/* alert(superArray); */
-
-
-
 	$.getJSON( 'js/pricing.json', function( data ) {
 	  populateColumn('starter', data);
 	  populateColumn('basic', data);
@@ -119,11 +100,9 @@ $(document).ready(function(){
         play: { auto: true }
     });
 
-/*
     setTimeout(function(){
        $('#chatpop').show();
     }, 1500)
-*/
 
     $('#notnow').click(function(){
         $('#chatpop').hide();
