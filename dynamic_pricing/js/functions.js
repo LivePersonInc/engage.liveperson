@@ -66,10 +66,11 @@ console.log(data.body[0].includedUnits);
 
 console.log(data.body);
 
-var priceAr = new Array;
 
-var annualCols = document.querySelectorAll("div.annual");
-var quarterlyCols = document.querySelectorAll("div.quarterly");
+var annualCols = document.querySelectorAll(".annual");
+var quarterlyCols = document.querySelectorAll(".quarterly");
+
+var creditsPer = document.querySelectorAll('div.credits');
 
 
 for (i=0; i < data.body.length; i++) {
@@ -83,7 +84,15 @@ for (i=0; i < data.body.length; i++) {
 	annualCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
 	annualCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
 	annualCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
+	creditsPer[i].innerHTML = data.body[i].includedUnits;
+
 }
+
+	quarterlyCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
+	quarterlyCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
+	quarterlyCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
+	creditsPer[i].innerHTML = data.body[i].includedUnits;
+
 
 
 /*
@@ -178,16 +187,16 @@ function populateColumn(columnName, data){
 
 
 	$('button#annual').click(function() {
-		$('button#monthly').addClass('off');
+		$('button#quarterly').addClass('off');
 		$('button#annual').removeClass('off');
-		$('div.monthly').hide();
+		$('div.quarterly').hide();
 		$('div.annual').show();
 	});
 
-	$('button#monthly').click(function() {
+	$('button#quarterly').click(function() {
 		$('button#annual').addClass('off');
-		$('button#monthly').removeClass('off');
-		$('div.monthly').show();
+		$('button#quarterly').removeClass('off');
+		$('div.quarterly').show();
 		$('div.annual').hide();
 	});
 
