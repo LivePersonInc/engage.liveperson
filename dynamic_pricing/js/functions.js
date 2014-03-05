@@ -50,6 +50,7 @@
 			}
 
 			function onServerResponse(data) {
+
 /*
 			alert(data);
 			alert(data.body[0].productRatePlanName);
@@ -61,13 +62,50 @@
 console.log(data.body[0].includedUnits);
 
 */
+
+
 console.log(data.body);
 
-	  populateColumn('starter', data);
-	  populateColumn('basic', data);
-	  populateColumn('deluxe', data);
+var priceAr = new Array;
+
+var annualCols = document.querySelectorAll("div.annual");
+var quarterlyCols = document.querySelectorAll("div.quarterly");
+
+
+for (i=0; i < data.body.length; i++) {
+/* 	console.log(data.body[i].ratePlanCharges.USD.discountPercentage + " " + data.body[i].baseBillingFrequencyMonths); */
+	var output = '';
+	var pricingObject = data.body[i].ratePlanCharges.USD;
+
+
+ if (i <= 2) {
+	//listPrice =	annualCols[i].querySelectorAll('.list_price').innerHTML;
+	annualCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
+	annualCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
+	annualCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
+}
+
+
+/*
+	for (var property in object) {
+	  output += property + ': ' + object[property]+'; ';
+	}
+
+	var pricingDataStr = data.body[i].baseBillingFrequencyStr + " " + data.body[i].includedUnits + " " + output
+	priceAr.push(pricingDataStr);
+*/
 
 	}
+/* console.log(priceAr); */
+}
+
+
+
+
+
+
+
+/* column.find('.annual .list_price').text(data[columnName].annual.list_price); */
 
 
 
@@ -93,12 +131,9 @@ console.log(data.body);
 				lpBilling.taglets.lpAjax.issueCall(req);
 			}
 
-
 			start();
 
-
 			$(window).load(function(){
-
 
 				send('https://le-billing-a.liveperson.net/le-billing/public/api/pricing/rateplans/v10');
 
@@ -106,20 +141,6 @@ console.log(data.body);
 /* end giancarlo added */
 
 
-/*
-
-var superArray = new Array;
-superArray = [
-
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Annual',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Annual',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Annual'
-
-]
-*/
 
 /* alert(superArray);
 
@@ -129,6 +150,8 @@ superArray = [
 	  populateColumn('deluxe', data);
 
 	});*/
+
+/*
 
 function populateColumn(columnName, data){
 	  var column = $('th.' + columnName);
@@ -149,6 +172,7 @@ function populateColumn(columnName, data){
 		  column2.find('.button').attr('id', data[columnName].monthly.button);
 
 };
+*/
 
 
 

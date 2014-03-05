@@ -102,7 +102,7 @@ $(document).ready(function(){
 
     setTimeout(function(){
        $('#chatpop').show();
-    }, 1500)
+    }, 10000)
 
     $('#notnow').click(function(){
         $('#chatpop').hide();
