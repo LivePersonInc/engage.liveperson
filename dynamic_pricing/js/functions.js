@@ -68,44 +68,37 @@ console.log(data.body);
 
 
 var annualCols = document.querySelectorAll(".annual");
+
 var quarterlyCols = document.querySelectorAll(".quarterly");
 
 var creditsPer = document.querySelectorAll('div.credits');
 
+var buttonArray = ["lp_div_qtrbuynowstarter","lp_div_qtrbuynowbasic","lp_div_annualbuynowdeluxe","lp_div_annualbuynowstarter", "lp_div_annualbuynowbasic", "lp_div_qtrbuynowdeluxe"];
+
+//button = document.querySelectorAll('.button');
 
 for (i=0; i < data.body.length; i++) {
-/* 	console.log(data.body[i].ratePlanCharges.USD.discountPercentage + " " + data.body[i].baseBillingFrequencyMonths); */
-	var output = '';
 	var pricingObject = data.body[i].ratePlanCharges.USD;
 
+	if (i >= 0 && i <= 2) {
 
- if (i <= 2) {
-	//listPrice =	annualCols[i].querySelectorAll('.list_price').innerHTML;
-	annualCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
-	annualCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
-	annualCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
-	creditsPer[i].innerHTML = data.body[i].includedUnits;
+		quarterlyCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
+		quarterlyCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
+		quarterlyCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
+		creditsPer[i].innerHTML = data.body[i].includedUnits;
 
-}
+	//	button.setAttribute('id') = buttonArray[i];
 
-	quarterlyCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
-	quarterlyCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
-	quarterlyCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
-	creditsPer[i].innerHTML = data.body[i].includedUnits;
+		} else if (i >= 3 && i <= 5) {
 
+		annualCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
+		annualCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
+		annualCols[i].querySelector('.price').innerHTML = "$" + pricingObject.discountPrice/12 + "/mo";
 
-
-/*
-	for (var property in object) {
-	  output += property + ': ' + object[property]+'; ';
-	}
-
-	var pricingDataStr = data.body[i].baseBillingFrequencyStr + " " + data.body[i].includedUnits + " " + output
-	priceAr.push(pricingDataStr);
-*/
+		}
 
 	}
-/* console.log(priceAr); */
+
 }
 
 
@@ -148,41 +141,6 @@ for (i=0; i < data.body.length; i++) {
 
 			})
 /* end giancarlo added */
-
-
-
-/* alert(superArray);
-
-	$.getJSON( 'js/pricing.json', function( data ) {
-	  populateColumn('starter', data);
-	  populateColumn('basic', data);
-	  populateColumn('deluxe', data);
-
-	});*/
-
-/*
-
-function populateColumn(columnName, data){
-	  var column = $('th.' + columnName);
-	  var column2 = $('td.' + columnName);
-
-		  column.find('.annual .list_price').text(data[columnName].annual.list_price);
-		  column.find('.annual .discount').text(data[columnName].annual.discount);
-		  column.find('.annual .price').text(data[columnName].annual.price);
-
-		  column2.find('.credits').text(data[columnName].annual.credits);
-		  column2.find('.button').attr('id', data[columnName].annual.button);
-
-		  column.find('.monthly .list_price').text(data[columnName].monthly.list_price);
-		  column.find('.monthly .discount').text(data[columnName].monthly.discount);
-		  column.find('.monthly .price').text(data[columnName].monthly.price);
-
-		  column2.find('.credits').text(data[columnName].monthly.credits);
-		  column2.find('.button').attr('id', data[columnName].monthly.button);
-
-};
-*/
-
 
 
 
