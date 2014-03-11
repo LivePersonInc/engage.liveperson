@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<script src="js/postMessage.js"></script>
+		<script>
+			function start(){
+				if ( window.addEventListener ) {
+					window.addEventListener( "load", doLoad, false );
+				} else if ( window.attachEvent ) {
+					window.attachEvent( "onload", doLoad );
+				} else if ( window.onLoad ) {
+					window.onload = doLoad;
+				}
+			}
+
+			function getBillingDomain(){
+				return document.getElementById("domain").value;
+			}
+
+			function doLoad(){
+				var endpoint = {
+					"transport":"postmessage",
+					"configuration":[
+						{
+							"url": getBillingDomain() + "/postmessage/postmessage.min.html",
+							"delayLoad":0
+						}
+					]
+				};
+
+				var configurers = {
+					postmessage:{
+						frames:[],
+						defaults:{
+							timeout: 100
+						},
+						configure:function (frame) {
+							this.frames.push(frame);
+						}
+					}
+				};
+				configurers[endpoint.transport].configure(endpoint.configuration[0]);
+
+				lpBilling.taglets.lpAjax.configureTransports(configurers);
+			}
+
+			function success(){
+				console.log("success >>> 111");
+			}
+
+			function error(){
+				console.log("error >>> 111");
+			}
+
+			function onServerResponse(msg){
+				console.log("onServerResponse >> OK msg=");
+				console.log(msg);
+				document.getElementById("result").innerHTML = "<b>The result is:</b><br /> " + JSON.stringify(msg.body);
+			}
+
+			function send(url){
+				var req = lpBilling.taglets.lpAjax_request;
+
+				req.method = "get";
+
+				req.url = url;
+				req.callback = onServerResponse;
+
+				req.success = function (data) {
+					console.log("req.success");
+					onServerResponse(data);
+				};
+
+				req.error = function (data) {
+					console.log("req.error");
+					onServerResponse(data);
+				};
+
+				lpBilling.taglets.lpAjax.issueCall(req);
+			}
+
+			function getPlanDetails(){
+				url = getBillingDomain() + "/le-billing/public/api/pricing/rateplan/v10?productName=" + document.getElementById("productName").value + "&planName=" + document.getElementById("planName").value;
+				document.getElementById("url").innerHTML = "<b>The URL to the resource is:</b><br />" + url;
+				send(url);
+			}
+
+			start();
+		</script>
+	</head>
+	<body>
+		<h1>Billing service - Demo of pricing resource.</h1>
+		<br />
+		Click on the send button.
+		<br />
+		<table>
+			<tr>
+				<td>
+					Billing domain:
+				</td>
+				<td>
+					<input id="domainQA" type="hidden" value="http://qtvr-wap49.tlv.lpnet.com" style="width: 600px;" />
+					<input id="domain" type="text" value="https://le-billing.liveperson.net" style="width: 600px;" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					productName:
+				</td>
+				<td>
+					<input id="productName" type="text" value="LiveEngage"  style="width: 600px;"  />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					planName:
+				</td>
+				<td>
+					<input id="planName" type="text" value="100%20%2F%20Monthly" style="width: 600px;"  />&nbsp(Should be URL encoded)
+				</td>
+			</tr>
+		</table>
+		<br />
+		<input type="button" onClick="getPlanDetails();" value="send" />
+		<br />
+		<br />
+		<div id="url"></div>
+		<br />
+		<div id="result"></div>
+
+	</body>
+</html>
+
