@@ -1,9 +1,8 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<script src="//cdn.optimizely.com/js/589670652.js"></script>
+	<script src="https://cdn.optimizely.com/js/589670652.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>LivePerson</title>
 
@@ -42,13 +41,18 @@
     <!-- MOBILE REDIRECT -->
     <script type="text/javascript" src="http://ubound.s3.amazonaws.com/JScript/mobile_bool.js"></script>
     <script type="text/javascript">
-        if( is_this_browser_mobile ){ document.location = "http://livepersonengage.com/" };
+        if( is_this_browser_mobile ){ document.location = "http://livepersonengage.com/mobile/" };
     </script>
 
 
 
 </head>
 <body>
+
+<!-- BEGIN LivePerson Monitor. -->
+<script type="text/javascript"> window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){window.lpTag={site:'59780729'||'',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);},0);},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);},1);}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn);}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn);}else{this._defL=this._defL||[];this._defL.push(fn);}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},start:function(){this.autoStart=true;},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init();}else{window.lpTag._tagCount+=1;} </script>
+
+    <!-- END LivePerson Monitor. -->
     <div id="pagewrap">
         <div id="logowrap">
             <div class="innerwrap">
@@ -65,9 +69,10 @@
                     <h3>LiveEngage</h3>
                     <p>Drive online sales, generate quality leads, and provide exceptional service at a lower cost.</p>
                     <div id="clickbox">
-                        <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Try"><img src="images/tryforfree_button.png" /></a>
 
-                        <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_ClickToChat']); openChat(); liveballScriptlet(10, 'json', 'param1=vertChat_Launch');"><img src="images/clicktochat_button.png" id="clicktochat"/></a>
+											<a href="https://liveengage.liveperson.net/a/new/?currency=USD&lang=en-US&planName=30%20/%20Annual&tier=30&frequency=Annual&Campaign_ID=70100000000AAt7#registration!signUp" style="display: inline; width: 236px !important; overflow: hidden; float:left; "><img src="images/tryforfree_button.png" /></a>
+											<div id="lp_div_clicktochat_button" style="display: inline; width: 236px !important; float: left; margin-left: 6px"></div>
+
                     </div>
                 </div>
                 <img id="fellow" src="images/woman3.png" />
@@ -104,68 +109,79 @@
 
 
         <div id="content2wrap" class="auto-height">
+
             <div class="innerwrap2" id="pricing" style="padding: 0px;">
-                        <div id="most-popular"><img src="img/popular_banner.png" alt="popular_banner" width="84" height="69"></div>
+					<div id="most-popular"><img src="img/popular_banner.png" alt="popular_banner" width="84" height="69" /></div>
+
 				        <h1 class="orange">Pricing</h1>
 				        <h4>Unlimited Access.  Risk-free Trial.</h4>
+
                 <div id="details">
 	                <div class="time-switch">
-		                <button id="monthly" class="off">Quarterly</button>
+		                <button id="quarterly" class="off">Quarterly</button>
 		                <button id="annual">Annual</button>
 	                </div>
 
 									<table class="pricing-details">
+
 										<tr>
 											<th class="starter">
+
 												Starter
 												<p>Ideal for sites that get 100 - 5,000 visitors/mo</p>
 
+												<div class="quarterly">
+													<div class="list_price"></div>
+												  <div class="discount"></div>
+												  <div class="price"></div>
+												</div>
+
 												<div class="annual">
 													<div class="list_price"></div>
 												  <div class="discount"></div>
 												  <div class="price"></div>
 												</div>
 
-												<div class="monthly">
-													<div class="list_price"></div>
-												  <div class="discount"></div>
-												  <div class="price"></div>
-												</div>
+
 
 
 											</th>
+
 											<th class="basic">Basic
 												<p>Ideal for sites that get 5,001 - 15,000 visitors/mo</p>
+
+												<div class="quarterly">
+													<div class="list_price"></div>
+												  <div class="discount"></div>
+												  <div class="price"></div>
+												</div>
+
 
 												<div class="annual">
 													<div class="list_price"></div>
 												  <div class="discount"></div>
 												  <div class="price"></div>
-
 												</div>
 
-												<div class="monthly">
-													<div class="list_price"></div>
-												  <div class="discount"></div>
-												  <div class="price"></div>
-												</div>
 
 
 											</th>
 											<th class="deluxe">Deluxe
 												<p>Ideal for sites that get 15,001 - 30,000 visitors/mo</p>
 
+												<div class="quarterly">
+													<div class="list_price"></div>
+												  <div class="discount"></div>
+												  <div class="price"></div>
+												</div>
+
+
 												<div class="annual">
 													<div class="list_price"></div>
 												  <div class="discount"></div>
 												  <div class="price"></div>
 												</div>
 
-												<div class="monthly">
-													<div class="list_price"></div>
-												  <div class="discount"></div>
-												  <div class="price"></div>
-												</div>
 											</th>
 										</tr>
 
@@ -178,10 +194,9 @@
 														<li class="tooltip" title="Present visitors with custom offer banners based on their behavior and nudge them to checkout (four styles to choose from).">Targeted Offers</li>
 														<li class="tooltip" title="Break visitors into different groups based on their behavior and message them accordingly.">Custom Messaging</li>
 														<li class="tooltip" title="Agents are ready to troubleshoot issues 24/7 via live chat or online web tickets.">24/7 Tech Support</li>
-
-
 												</ul>
-																							<button class="start" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');">Buy Now</button>
+												<a class="button button_annual" href="#">Buy Now</a>
+												<a class="button button_quarterly" href="#">Buy Now</a>
 											</td>
 											<td class="basic">
 											<div class="credits credit-number"></div>
@@ -190,9 +205,11 @@
 														<li class="tooltip" title="Serve targeted, customized banners inviting visitors to a live chat so you can assist them in their journey.">Live Chat</li>
 														<li class="tooltip" title="Present visitors with custom offer banners based on their behavior and nudge them to checkout (four styles to choose from).">Targeted Offers</li>
 														<li class="tooltip" title="Break visitors into different groups based on their behavior and message them accordingly.">Custom Messaging</li>
+
 														<li class="tooltip" title="Agents are ready to troubleshoot issues 24/7 via live chat or online web tickets.">24/7 Tech Support</li>
-													</ul>
-												<button class="start" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Chat">Buy Now</button>
+												</ul>
+												<a class="button button_annual" href="#">Buy Now</a>
+												<a class="button button_quarterly" href="#">Buy Now</a>
 
 											<td class="deluxe">
 											<div class="credits credit-number"></div>
@@ -201,16 +218,21 @@
 														<li class="tooltip" title="Serve targeted, customized banners inviting visitors to a live chat so you can assist them in their journey.">Live Chat</li>
 														<li class="tooltip" title="Present visitors with custom offer banners based on their behavior and nudge them to checkout (four styles to choose from).">Targeted Offers</li>
 														<li class="tooltip" title="Break visitors into different groups based on their behavior and message them accordingly.">Custom Messaging</li>
-													<li class="tooltip" title="Agents are ready to troubleshoot issues 24/7 via live chat or online web tickets.">24/7 Tech Support</li>
-													</ul>
-												<button class="start" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial']); openTrial(); liveballScriptlet(10, 'json', 'param1=vertTrial_Launch');" alt="Click to Chat">Buy Now</button>
-												</td>
 
-</tr>
+														<li class="tooltip" title="Agents are ready to troubleshoot issues 24/7 via live chat or online web tickets.">24/7 Tech Support</li>
+
+												</ul>
+												<a class="button button_annual" href="#">Buy Now</a>
+												<a class="button button_quarterly" href="#">Buy Now</a>
+										</tr>
+
+
+
 
 									</table>
 									<div class="post-pricing" style="text-align: center">
-										<p>Need more credits? Have questions about which plan is right for you? <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_ClickToChat']); openChat(); return false;" alt="Click to Chat">Chat to learn more</a></p>
+										<p>Need more credits? Have questions about which plan is right for you? </span></p>
+										<div id="lp_div_chattolearnmore_button"></div>
 									</div>
                 </div>
 
@@ -220,10 +242,10 @@
 		                <li>Risk-free trial for 15 days (no credit card required)</li>
 		                <li>Pay only for the number of Live Person visitor interactions</li>
 		                <li>If you run out of credits you can buy more</li>
-	                </ul>
-	            	                <button class="start bigger" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial2']); openTrial(); return false;"></button>
 
-		</div>
+	                </ul>
+								<a href="https://liveengage.liveperson.net/a/new/?currency=USD&lang=en-US&planName=30%20/%20Annual&tier=30&frequency=Annual&Campaign_ID=70100000000AAt7#registration!signUp" style="margin:30px 40px 15px;display:block"><img src="img/trynow-button.png" /></a>
+								</div>
 
 
 
@@ -236,7 +258,7 @@
                 <div id="tryit">
                     <h1 class="orange">Get a Free Trial!</h1>
                     <p>It has never been easier to see what an impact LiveEngage can make! With your free 15&#45;day trial, you can see how easy it is to engage your customers and drive results.</p>
-                    <a href="#" onclick="_gaq.push(['_trackEvent', 'click', 'v2_Open_GetAFreeTrial2']); openTrial(); return false;" alt="Click to Try"><img src="images/startmytrial_button.png"></a>
+                    <a href="https://liveengage.liveperson.net/a/new/?currency=USD&lang=en-US&planName=30%20/%20Annual&tier=30&frequency=Annual&Campaign_ID=70100000000AAt7#registration!signUp" style="display:block"><img src="images/startmytrial_button.png" /></a>
                 </div>
 
                 <div id="testimonials">
@@ -310,6 +332,7 @@
     <script type="text/javascript" src="http://cache.university-bound.com/JScript/masked-input.js"></script>
     <script type="text/javascript" src="http://cache.university-bound.com/JScript/urlparams.js"></script>
     <script src="js/jquery.slides.js" type="text/javascript"></script>
+	<script src="js/postmessageHost.js" type="text/javascript"></script>
 	<script src="js/functions.js" type="text/javascript"></script>
     <script src="js/placeholder.js" type="text/javascript"></script>
 	<!--/Scripts -->

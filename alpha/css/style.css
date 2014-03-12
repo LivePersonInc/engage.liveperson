@@ -10,6 +10,8 @@ body{
 }
 
 
+
+
 /*-------------------
 Footer
 ------------------- */
@@ -205,16 +207,22 @@ textarea:-moz-placeholder{
 .innerwrap{
 	width: 1120px;
 	margin: 0 auto;
-	overflow: hidden;
+	overflow: auto;
+	height: 100%;
+}
+.innerwrap2{
+	width: 1120px;
+	margin: 0 auto;
 	height: 100%;
 }
 
 
-.innerwrap2 {
-	width: 1120px;
-	margin: 0 auto;
+#most-popular {
+	z-index: 3;
+		position: absolute;
+		left: -11px;
+		top: 149px;
 
-	height: 100%;
 }
 
 #pagewrap{
@@ -393,14 +401,6 @@ margin-left: 2px;
 	margin-bottom: 5px;
 }
 
-
-#most-popular {
-	z-index: 3;
-	position: absolute;
-	left: -11px;
-	top: 149px;
-}
-
 #blockwrapper h3{
 	color: #50677f;
 	font-weight: normal;
@@ -566,7 +566,7 @@ margin-left: 2px;
 
 }
 
-div.monthly {
+div.quarterly {
 	display: none;
 }
 
@@ -926,8 +926,7 @@ color: #f2f2f2;
 	color: #becbdb;
 }
 
-#footer2wrap{
-background-color: #151314;
+#footer2wrap{background-color: #151314;
 height: auto;
 margin-bottom: -16px !important;
 float: left;
@@ -1128,7 +1127,7 @@ ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic;  }
-svg:not(:root) { overflow: hidden; }
+svg:not(:root) { overflow: auto; }
 figure { margin: 0; }
 
 form { margin: 0; }
@@ -1163,3 +1162,22 @@ input:focus, select:focus, button:focus { outline: none; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+
+
+
+
+
+
+.pricing-details .button {
+    background: url("../images/button_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    color: #FFFFFF;
+    font-family: MyriadPro-Bold;
+    font-size: 13px;
+	padding-top:3px;
+    height: 25px;
+    width: 110px;
+	display:inline-block;
+	text-decoration:none;
+}

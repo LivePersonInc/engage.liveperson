@@ -1,29 +1,182 @@
 
 
+/* giancarlo added */
+
+$('.button_quarterly').hide();
 
 
-var superArray = new Array;
-superArray = [
-
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Quarterly',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=30%20%2F%20Annual',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=100%20%2F%20Annual',
-'https://le-billing.liveperson.net/le-billing/public/api/pricing/rateplan/v1.0?productName=LiveEngage&planName=330%20%2F%20Annual'
-
-]
-
-/* alert(superArray); */
+	function start(){
+				if ( window.addEventListener ) {
+					window.addEventListener( "load", doLoad, false );
+				} else if ( window.attachEvent ) {
+					window.attachEvent( "onload", doLoad );
+				} else if ( window.onLoad ) {
+					window.onload = doLoad;
+				}
+			}
 
 
+
+			function doLoad(){
+				var endpoint = {
+					"transport":"postmessage",
+					"configuration":[
+						{
+							"url": "https://le-billing-a.liveperson.net/postmessage/postmessage.min.html",
+							"delayLoad":0
+						}
+					]
+				};
+
+				var configurers = {
+					postmessage:{
+						frames:[],
+						defaults:{
+							timeout: 100
+						},
+						configure:function (frame) {
+							this.frames.push(frame);
+						}
+					}
+				};
+				configurers[endpoint.transport].configure(endpoint.configuration[0]);
+
+				lpBilling.taglets.lpAjax.configureTransports(configurers);
+			}
+
+			function success(){
+				console.log("success >>> 111");
+			}
+
+			function error(){
+				console.log("error >>> 111");
+			}
+
+			function onServerResponse(data) {
+
+/*
+			alert(data);
+			alert(data.body[0].productRatePlanName);
+			alert(data.body[1].productRatePlanName);
+			alert(data.body[2].productRatePlanName);
+			alert(data.body[3].productRatePlanName);
+			alert(data.body[4].productRatePlanName);
+			alert(data.body[5].productRatePlanName);
+console.log(data.body[0].includedUnits);
+
+*/
+
+
+console.log(data.body);
+
+
+var annualCols = document.querySelectorAll(".annual");
+var annualBtn = document.querySelectorAll(".button_annual");
+var quarterlyCols = document.querySelectorAll(".quarterly");
+var quarterlyBtn = document.querySelectorAll(".button_quarterly");
+
+var creditsPer = document.querySelectorAll('div.credits');
+
+
+for (i=0; i < data.body.length; i++) {
+/* 	console.log(data.body[i].ratePlanCharges.USD.discountPercentage + " " + data.body[i].baseBillingFrequencyMonths); */
+	var output = '';
+	var pricingObject = data.body[i].ratePlanCharges.USD;
+
+ if (i < 3) {
+	
+	quarterlyCols[i].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/3 + "/mo";
+	quarterlyCols[i].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
+	var yearlyPrice = pricingObject.flatFeePrice - pricingObject.discountPrice;
+	var monthlyPrice = Math.round((yearlyPrice / 3)*100)/100;
+	var monthlyPriceFixed = monthlyPrice.toFixed(2);
+	quarterlyCols[i].querySelector('.price').innerHTML = "$" + monthlyPriceFixed + "/mo";
+	var productRatePlanName = data.body[i].productRatePlanName;
+	creditsPer[i].innerHTML = data.body[i].includedUnits;
+	$(quarterlyBtn[i]).attr('href','https://liveengage.liveperson.net/a/new/?currency=USD&lang=en-US&planName='+productRatePlanName+'&Campaign_ID=70100000000AAtC#registration!buyNow');
+}
+
+ else {
+	var iHateYou = i-3;
+	annualCols[iHateYou].querySelector('.list_price').innerHTML = "$" + pricingObject.flatFeePrice/12 + "/mo";
+	annualCols[iHateYou].querySelector('.discount').innerHTML = pricingObject.discountPercentage + "% off";
+	var yearlyPrice = pricingObject.flatFeePrice - pricingObject.discountPrice;
+	var monthlyPrice = Math.round((yearlyPrice / 12)*100)/100;
+	var monthlyPriceFixed = monthlyPrice.toFixed(2);
+	annualCols[iHateYou].querySelector('.price').innerHTML = "$" + monthlyPriceFixed + "/mo";
+	var productRatePlanName = data.body[i].productRatePlanName;
+	$(annualBtn[iHateYou]).attr('href','https://liveengage.liveperson.net/a/new/?currency=USD&lang=en-US&planName='+productRatePlanName+'&Campaign_ID=70100000000AAtC#registration!buyNow');
+}
+
+
+/*
+	for (var property in object) {
+	  output += property + ': ' + object[property]+'; ';
+	}
+
+	var pricingDataStr = data.body[i].baseBillingFrequencyStr + " " + data.body[i].includedUnits + " " + output
+	priceAr.push(pricingDataStr);
+*/
+
+	}
+
+	
+	
+}
+
+
+
+
+
+
+
+/* column.find('.annual .list_price').text(data[columnName].annual.list_price); */
+
+
+
+			function send(url){
+				var req = lpBilling.taglets.lpAjax_request;
+
+				req.method = "post";
+
+				req.url = url;
+				req.callback = onServerResponse;
+				req.data= '[{"productName":"LiveEngage","productRatePlanName":"30 / Quarterly"},{"productName":"LiveEngage","productRatePlanName":"100 / Quarterly"},{"productName":"LiveEngage","productRatePlanName":"330 / Quarterly"},{"productName":"LiveEngage","productRatePlanName":"30 / Annual"},{"productName":"LiveEngage","productRatePlanName":"100 / Annual"},{"productName":"LiveEngage","productRatePlanName":"330 / Annual"}]';
+
+				req.success = function (data) {
+					console.log("req.success");
+					onServerResponse(data);
+				};
+
+				req.error = function (data) {
+					console.log("req.error");
+					onServerResponse(data);
+				};
+
+				lpBilling.taglets.lpAjax.issueCall(req);
+			}
+
+			start();
+
+			$(window).load(function(){
+
+				send('https://le-billing-a.liveperson.net/le-billing/public/api/pricing/rateplans/v10');
+
+			})
+/* end giancarlo added */
+
+
+
+/* alert(superArray);
 
 	$.getJSON( 'js/pricing.json', function( data ) {
 	  populateColumn('starter', data);
 	  populateColumn('basic', data);
 	  populateColumn('deluxe', data);
 
-	});
+	});*/
+
+/*
 
 function populateColumn(columnName, data){
 	  var column = $('th.' + columnName);
@@ -44,21 +197,26 @@ function populateColumn(columnName, data){
 		  column2.find('.button').attr('id', data[columnName].monthly.button);
 
 };
+*/
 
 
 
 
 	$('button#annual').click(function() {
-		$('button#monthly').addClass('off');
+		$('button#quarterly').addClass('off');
 		$('button#annual').removeClass('off');
-		$('div.monthly').hide();
+		$('div.quarterly').hide();
+		$('.button_quarterly').hide();
+		$('.button_annual').show();
 		$('div.annual').show();
 	});
 
-	$('button#monthly').click(function() {
+	$('button#quarterly').click(function() {
 		$('button#annual').addClass('off');
-		$('button#monthly').removeClass('off');
-		$('div.monthly').show();
+		$('button#quarterly').removeClass('off');
+		$('.button_quarterly').show();
+		$('div.quarterly').show();
+		$('.button_annual').hide();
 		$('div.annual').hide();
 	});
 
